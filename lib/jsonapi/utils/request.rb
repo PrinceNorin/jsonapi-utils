@@ -42,16 +42,16 @@ module JSONAPI::Utils
     # @return [String]
     #
     # @api public
-    def process_request
-      operations = @request.operations
-      unless JSONAPI.configuration.resource_cache.nil?
-        operations.each {|op| op.options[:cache_serializer] = resource_serializer }
-      end
-      results = process_operations(operations)
-      render_results(results)
-    rescue => e
-      handle_exceptions(e)
-    end
+    # def process_request
+    #   operations = @request.operations
+    #   unless JSONAPI.configuration.resource_cache.nil?
+    #     operations.each {|op| op.options[:cache_serializer] = resource_serializer }
+    #   end
+    #   results = process_operations(operations)
+    #   render_results(results)
+    # rescue => e
+    #   handle_exceptions(e)
+    # end
 
     # Helper to get params for the main resource.
     #
